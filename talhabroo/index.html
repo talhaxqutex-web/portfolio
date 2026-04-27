@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Talha Ahmed | প্রফেশনাল পোর্টফোলিও</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #0f0f1a 50%, #1a1a2e 100%);
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* নেভবার */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 1rem 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            margin-bottom: 3rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, #00d4ff, #ff006e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ddd;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* হিরো সেকশন */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .hero-left h4 {
+            color: #00d4ff;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-left h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff, #ff006e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-left p {
+            color: #bbb;
+            margin: 1.5rem 0;
+            border-left: 3px solid #ff006e;
+            padding-left: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #00d4ff, #ff006e);
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-block;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.6);
+        }
+
+        /* প্রোফাইল ছবি */
+        .hero-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00d4ff;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            transition: 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
+        }
+
+        .img-placeholder {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a1a2e, #0a0a0a);
+            border: 3px dashed #00d4ff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        .img-placeholder i {
+            font-size: 4rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        /* স্কিল সেকশন - 3D টাচ সহ আধুনিক কার্ড */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 4rem 0 2rem;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, #00d4ff, #ff006e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .skill-card {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1.8rem 1rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: 0.5s;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .skill-card:hover {
+            border-color: #00d4ff;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover i {
+            transform: scale(1.1) rotate(5deg);
+            text-shadow: 0 0 15px #00d4ff;
+        }
+
+        /* আইকনগুলোর আলাদা রং */
+        .skill-card:nth-child(1) i { color: #ff6b6b; text-shadow: 0 0 5px #ff6b6b; }
+        .skill-card:nth-child(2) i { color: #4ecdc4; text-shadow: 0 0 5px #4ecdc4; }
+        .skill-card:nth-child(3) i { color: #45b7d1; text-shadow: 0 0 5px #45b7d1; }
+        .skill-card:nth-child(4) i { color: #f9ca24; text-shadow: 0 0 5px #f9ca24; }
+        .skill-card:nth-child(5) i { color: #f0932b; text-shadow: 0 0 5px #f0932b; }
+        .skill-card:nth-child(6) i { color: #eb4d4b; text-shadow: 0 0 5px #eb4d4b; }
+        .skill-card:nth-child(7) i { color: #6ab04c; text-shadow: 0 0 5px #6ab04c; }
+        .skill-card:nth-child(8) i { color: #be2edd; text-shadow: 0 0 5px #be2edd; }
+
+        .skill-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .skill-card p {
+            font-size: 0.7rem;
+            color: #aaa;
+        }
+
+        /* কন্টাক্ট গ্রিড - 3D টাচ সহ */
+        .contact-section {
+            margin: 4rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(12, 12, 12, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 1.8rem 0.5rem;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            display: block;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to top, rgba(0, 212, 255, 0.1), transparent);
+            transition: 0.3s;
+        }
+
+        .contact-card:hover::before {
+            height: 100%;
+        }
+
+        .contact-card:hover {
+            border-color: #ff006e;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 0, 110, 0.2);
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .contact-card:hover i {
+            transform: scale(1.15);
+            text-shadow: 0 0 20px #00d4ff;
+        }
+
+        .contact-card:nth-child(1) i { color: #1877f2; }
+        .contact-card:nth-child(2) i { color: #25D366; }
+        .contact-card:nth-child(3) i { color: #0084ff; }
+        .contact-card:nth-child(4) i { color: #ea4335; }
+
+        .contact-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-card p {
+            font-size: 0.7rem;
+            color: #aaa;
+            word-break: break-all;
+        }
+
+        .click-hint {
+            font-size: 0.6rem;
+            margin-top: 8px;
+            color: #ff006e;
+            opacity: 0.8;
+        }
+
+        /* ফুটার */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 3rem;
+            color: #666;
+            font-size: 0.75rem;
+        }
+
+        /* রেসপনসিভ */
+        @media (max-width: 1000px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-left p {
+                text-align: left;
+            }
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-left h1 {
+                font-size: 2.2rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .profile-img, .img-placeholder {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- নেভবার: এখন শুধু Talha Ahmed -->
+    <div class="navbar">
+        <div class="logo">Talha Ahmed</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#skills">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- হিরো সেকশন -->
+    <div class="hero">
+        <div class="hero-left">
+            <h4>✦ PROFESSIONAL FREELANCER ✦</h4>
+            <h1>Talha <span class="gradient-text">Ahmed</span></h1>
+            <p>Building digital experiences that merge creativity with technology. Expert in Facebook marketing, video editing & all social media services.</p>
+            <a href="#contact" class="btn-primary">Hire Me Now</a>
+        </div>
+        <div class="hero-right">
+            <img id="profileImage" class="profile-img" src="https://i.ibb.co/217G1kGk/501775769-681939128013220-1583315386946022509-n.jpg" alt="Talha Ahmed">
+            <div id="imagePlaceholder" class="img-placeholder" style="display: none;">
+                <i class="fas fa-camera"></i>
+                <p>এখানে তোমার ছবি বসবে</p>
+                <p style="font-size:0.6rem;">নিচের নির্দেশনা দেখো</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- স্কিল সেকশন -->
+    <div id="skills">
+        <div class="section-title">⚡ <span>My Services</span> ⚡</div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-video"></i>
+                <h3>Video Editor</h3>
+                <p>Professional video editing, transitions, VFX</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Digital Marketer</h3>
+                <p>SEO, social media marketing, strategy</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-facebook-f"></i>
+                <h3>Facebook Ad Creator</h3>
+                <p>High converting ads, targeting</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-users"></i>
+                <h3>Facebook Manager</h3>
+                <p>Page management, engagement</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-user-tie"></i>
+                <h3>Account Assistant</h3>
+                <p>Data entry, virtual assistance</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-camera"></i>
+                <h3>Photo Editor</h3>
+                <p>Photoshop, retouching, background</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-facebook-messenger"></i>
+                <h3>Facebook All Service</h3>
+                <p>Page setup, ads, verification</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-tasks"></i>
+                <h3>Complete Support</h3>
+                <p>24/7 client support</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- কন্টাক্ট সেকশন -->
+    <div class="contact-section" id="contact">
+        <div class="section-title">📞 <span>Get in Touch</span> 📞</div>
+        <div class="contact-grid">
+            <a href="https://facebook.com/talha.ahmed.official" target="_blank" class="contact-card">
+                <i class="fab fa-facebook-f"></i>
+                <h4>Facebook Profile</h4>
+                <p>/talha.ahmed.official</p>
+                <div class="click-hint">🔗 ক্লিক করলেই FB</div>
+            </a>
+            <a href="https://wa.me/8801721929231" target="_blank" class="contact-card">
+                <i class="fab fa-whatsapp"></i>
+                <h4>WhatsApp</h4>
+                <p>+880 1721-929231</p>
+                <div class="click-hint">💬 ক্লিক করলেই WhatsApp</div>
+            </a>
+            <a href="https://facebook.com/talha.ahmed.official" target="_blank" class="contact-card">
+                <i class="fab fa-facebook-messenger"></i>
+                <h4>Messenger</h4>
+                <p>Talha Ahmed</p>
+                <div class="click-hint">💬 ক্লিক করে মেসেজ</div>
+            </a>
+            <a href="mailto:talhaahmed13728@gmail.com" class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <p>talhaahmed13728@gmail.com</p>
+                <div class="click-hint">✉️ ইমেইল করুন</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Talha Ahmed. All rights reserved. | Professional Freelancer</p>
+        <p style="margin-top: 0.5rem; font-size: 0.7rem;">
+            <i class="fab fa-facebook"></i> <i class="fab fa-whatsapp"></i> <i class="fab fa-instagram"></i>
+        </p>
+    </div>
+</div>
+
+<!-- ছবি লোড হওয়ার পর প্লেসহোল্ডার লুকানোর স্ক্রিপ্ট -->
+<script>
+    const imgElement = document.getElementById('profileImage');
+    const placeholder = document.getElementById('imagePlaceholder');
+    
+    imgElement.onload = function() {
+        imgElement.style.display = 'block';
+        placeholder.style.display = 'none';
+    };
+    
+    // ছবি লোড না হলে প্লেসহোল্ডার দেখাবে
+    imgElement.onerror = function() {
+        imgElement.style.display = 'none';
+        placeholder.style.display = 'flex';
+    };
+</script>
+</body>
+</html>
